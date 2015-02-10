@@ -1,0 +1,26 @@
+From 90c82adb7962b37c6db88493cc81c09cf7ccbb9a Mon Sep 17 00:00:00 2001
+From: Alberto Murillo <alberto.murillo.silva@intel.com>
+Date: Fri, 17 Jul 2015 11:34:56 -0500
+Subject: [PATCH] disable sasl
+
+---
+ setup.cfg | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/setup.cfg b/setup.cfg
+index aafa110..2e3e49d 100644
+--- a/setup.cfg
++++ b/setup.cfg
+@@ -1,7 +1,7 @@
+ [_ldap]
+ library_dirs = /usr/lib /usr/lib64 /usr/local/lib /usr/local/lib64
+-include_dirs = /usr/include /usr/include/sasl /usr/local/include /usr/local/include/sasl
+-defines = HAVE_SASL HAVE_TLS HAVE_LIBLDAP_R
++include_dirs = /usr/include /usr/local/include
++defines = HAVE_TLS HAVE_LIBLDAP_R
+ extra_compile_args = 
+ extra_objects = 
+ libs = ldap_r
+-- 
+2.1.0
+
