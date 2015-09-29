@@ -4,7 +4,7 @@
 #
 Name     : python-ldap
 Version  : 2.4.21
-Release  : 9
+Release  : 10
 URL      : https://pypi.python.org/packages/source/p/python-ldap/python-ldap-2.4.21.tar.gz
 Source0  : https://pypi.python.org/packages/source/p/python-ldap/python-ldap-2.4.21.tar.gz
 Summary  : Python modules for implementing LDAP clients
