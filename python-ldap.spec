@@ -4,7 +4,7 @@
 #
 Name     : python-ldap
 Version  : 2.4.27
-Release  : 17
+Release  : 18
 URL      : http://pypi.debian.net/python-ldap/python-ldap-2.4.27.tar.gz
 Source0  : http://pypi.debian.net/python-ldap/python-ldap-2.4.27.tar.gz
 Summary  : Python modules for implementing LDAP clients
