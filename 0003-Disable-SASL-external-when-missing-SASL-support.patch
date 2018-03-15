@@ -1,0 +1,26 @@
+From 1423411f09b4300aa894a1d8f3c567b06bee6100 Mon Sep 17 00:00:00 2001
+From: Gabriel Briones Sayeg <gabriel.briones.sayeg@intel.com>
+Date: Thu, 15 Mar 2018 11:55:03 -0600
+Subject: [PATCH] Disable SASL external when missing SASL support
+
+Signed-off-by: Gabriel Briones Sayeg <gabriel.briones.sayeg@intel.com>
+---
+ Lib/slapdtest/_slapdtest.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/Lib/slapdtest/_slapdtest.py b/Lib/slapdtest/_slapdtest.py
+index adcccb8..1ea3bbe 100644
+--- a/Lib/slapdtest/_slapdtest.py
++++ b/Lib/slapdtest/_slapdtest.py
+@@ -213,7 +213,7 @@ class SlapdObject(object):
+             self.ldapi_uri = "ldapi://%s" % quote_plus(ldapi_path)
+             self.default_ldap_uri = self.ldapi_uri
+             # use SASL/EXTERNAL via LDAPI when invoking OpenLDAP CLI tools
+-            self.cli_sasl_external = True
++            self.cli_sasl_external = ldap.SASL_AVAIL
+         else:
+             self.ldapi_uri = None
+             self.default_ldap_uri = self.ldap_uri
+-- 
+2.16.2
+

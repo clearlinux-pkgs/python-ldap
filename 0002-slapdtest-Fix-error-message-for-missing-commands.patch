@@ -1,0 +1,26 @@
+From 53192d711cff0103580460a101f5f2cafaee9ae0 Mon Sep 17 00:00:00 2001
+From: Gabriel Briones Sayeg <gabriel.briones.sayeg@intel.com>
+Date: Wed, 14 Mar 2018 16:00:31 -0600
+Subject: [PATCH] slapdtest: Fix error message for missing commands
+
+Signed-off-by: Gabriel Briones Sayeg <gabriel.briones.sayeg@intel.com>
+---
+ Lib/slapdtest/_slapdtest.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/Lib/slapdtest/_slapdtest.py b/Lib/slapdtest/_slapdtest.py
+index 484eb54..adcccb8 100644
+--- a/Lib/slapdtest/_slapdtest.py
++++ b/Lib/slapdtest/_slapdtest.py
+@@ -254,7 +254,7 @@ class SlapdObject(object):
+         if command is None:
+             raise ValueError(
+                 "Command '{}' not found. Set the {} environment variable to "
+-                "override slapdtest's search path.".format(value, var_name)
++                "override slapdtest's search path.".format(cmd, var_name)
+             )
+         return command
+ 
+-- 
+2.16.2
+

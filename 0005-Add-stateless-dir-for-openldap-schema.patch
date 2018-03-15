@@ -1,0 +1,26 @@
+From 1984e0179b6da3c94946f1112a321cab2c3c5cc5 Mon Sep 17 00:00:00 2001
+From: Gabriel Briones Sayeg <gabriel.briones.sayeg@intel.com>
+Date: Thu, 15 Mar 2018 14:08:06 -0600
+Subject: [PATCH] Add stateless dir for openldap schema
+
+Signed-off-by: Gabriel Briones Sayeg <gabriel.briones.sayeg@intel.com>
+---
+ Lib/slapdtest/_slapdtest.py | 2 ++
+ 1 file changed, 2 insertions(+)
+
+diff --git a/Lib/slapdtest/_slapdtest.py b/Lib/slapdtest/_slapdtest.py
+index 1ea3bbe..12123cf 100644
+--- a/Lib/slapdtest/_slapdtest.py
++++ b/Lib/slapdtest/_slapdtest.py
+@@ -187,6 +187,8 @@ class SlapdObject(object):
+         SCHEMADIR = "/etc/openldap/schema"
+     elif os.path.isdir("/etc/ldap/schema"):
+         SCHEMADIR = "/etc/ldap/schema"
++    elif os.path.isdir("/usr/share/openldap/schema"):
++        SCHEMADIR = "/usr/share/openldap/schema"
+     else:
+         SCHEMADIR = None
+ 
+-- 
+2.16.2
+
