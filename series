@@ -1,5 +1,5 @@
 0001-Remove-SASL-dependency.patch
-0002-slapdtest-Fix-error-message-for-missing-commands.patch
-0003-Disable-SASL-external-when-missing-SASL-support.patch
+#0002-slapdtest-Fix-error-message-for-missing-commands.patch
+#0003-Disable-SASL-external-when-missing-SASL-support.patch
 0004-Custom-location-for-SLAPD.patch
 0005-Add-stateless-dir-for-openldap-schema.patch
