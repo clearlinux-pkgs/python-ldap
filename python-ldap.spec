@@ -4,10 +4,10 @@
 #
 Name     : python-ldap
 Version  : 3.2.0
-Release  : 23
+Release  : 24
 URL      : https://files.pythonhosted.org/packages/ea/93/596f875e003c770447f4b99267820a0c769dd2dc3ae3ed19afe460fcbad0/python-ldap-3.2.0.tar.gz
 Source0  : https://files.pythonhosted.org/packages/ea/93/596f875e003c770447f4b99267820a0c769dd2dc3ae3ed19afe460fcbad0/python-ldap-3.2.0.tar.gz
-Summary  : LDAP client API for Python
+Summary  : Python modules for implementing LDAP clients
 Group    : Development/Tools
 License  : Python-2.0
 Requires: python-ldap-license = %{version}-%{release}
@@ -30,9 +30,11 @@ Patch2: 0004-Custom-location-for-SLAPD.patch
 Patch3: 0005-Add-stateless-dir-for-openldap-schema.patch
 
 %description
----------------------------------------
-python-ldap: LDAP client API for Python
----------------------------------------
+python-ldap provides an object-oriented API to access LDAP directory servers
+          from Python programs. Mainly it wraps the OpenLDAP 2.x libs for that purpose.
+          Additionally the package contains modules for other LDAP-related stuff
+          (e.g. processing LDIF, LDAPURLs, LDAPv3 schema, LDAPv3 extended operations
+          and controls, etc.).
 
 %package license
 Summary: license components for the python-ldap package.
@@ -62,6 +64,7 @@ python3 components for the python-ldap package.
 
 %prep
 %setup -q -n python-ldap-3.2.0
+cd %{_builddir}/python-ldap-3.2.0
 %patch1 -p1
 %patch2 -p1
 %patch3 -p1
@@ -71,8 +74,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1571690736
-# -Werror is for werrorists
+export SOURCE_DATE_EPOCH=1576014313
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fno-lto "
 export FCFLAGS="$CFLAGS -fno-lto "
@@ -85,7 +87,7 @@ python3 setup.py build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
-PYTHONPATH=%{buildroot}/usr/lib/python3.7/site-packages python3 setup.py test
+PYTHONPATH=%{buildroot}$(python -c "import sys; print(sys.path[-1])") python setup.py test
 %install
 export MAKEFLAGS=%{?_smp_mflags}
 rm -rf %{buildroot}
