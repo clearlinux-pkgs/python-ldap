@@ -4,10 +4,10 @@
 #
 Name     : python-ldap
 Version  : 3.2.0
-Release  : 25
+Release  : 26
 URL      : https://files.pythonhosted.org/packages/ea/93/596f875e003c770447f4b99267820a0c769dd2dc3ae3ed19afe460fcbad0/python-ldap-3.2.0.tar.gz
 Source0  : https://files.pythonhosted.org/packages/ea/93/596f875e003c770447f4b99267820a0c769dd2dc3ae3ed19afe460fcbad0/python-ldap-3.2.0.tar.gz
-Summary  : Python modules for implementing LDAP clients
+Summary  : LDAP client API for Python
 Group    : Development/Tools
 License  : Python-2.0
 Requires: python-ldap-license = %{version}-%{release}
@@ -30,11 +30,9 @@ Patch2: 0004-Custom-location-for-SLAPD.patch
 Patch3: 0005-Add-stateless-dir-for-openldap-schema.patch
 
 %description
-python-ldap provides an object-oriented API to access LDAP directory servers
-          from Python programs. Mainly it wraps the OpenLDAP 2.x libs for that purpose.
-          Additionally the package contains modules for other LDAP-related stuff
-          (e.g. processing LDIF, LDAPURLs, LDAPv3 schema, LDAPv3 extended operations
-          and controls, etc.).
+---------------------------------------
+python-ldap: LDAP client API for Python
+---------------------------------------
 
 %package license
 Summary: license components for the python-ldap package.
@@ -57,6 +55,7 @@ python components for the python-ldap package.
 Summary: python3 components for the python-ldap package.
 Group: Default
 Requires: python3-core
+Provides: pypi(python-ldap)
 
 %description python3
 python3 components for the python-ldap package.
@@ -74,7 +73,8 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1576014313
+export SOURCE_DATE_EPOCH=1583212805
+# -Werror is for werrorists
 export GCC_IGNORE_WERROR=1
 export CFLAGS="$CFLAGS -fno-lto "
 export FCFLAGS="$CFLAGS -fno-lto "
