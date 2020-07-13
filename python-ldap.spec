@@ -4,7 +4,7 @@
 #
 Name     : python-ldap
 Version  : 3.2.0
-Release  : 27
+Release  : 28
 URL      : https://files.pythonhosted.org/packages/ea/93/596f875e003c770447f4b99267820a0c769dd2dc3ae3ed19afe460fcbad0/python-ldap-3.2.0.tar.gz
 Source0  : https://files.pythonhosted.org/packages/ea/93/596f875e003c770447f4b99267820a0c769dd2dc3ae3ed19afe460fcbad0/python-ldap-3.2.0.tar.gz
 Summary  : Python modules for implementing LDAP clients
